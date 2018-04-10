@@ -15,11 +15,12 @@ while(true) {
 
         System.out.print("Please enter in a command (deposit, withdraw, balance, exit): ");
 
-        boolean run = true;
+    
         String transaction = "";
-        int deposit;
-        int withdraw;
-        // String name;
+        String deposit;
+        
+        String withdraw;
+        
 
         Scanner scan = new Scanner(System.in);
        
@@ -28,17 +29,21 @@ while(true) {
         
 
             // DEPOSIT
+            // using if statement to check to make sure that transaction is equal to deposit
+            // used toLowerCase() for transaction so matter what 
                 if (transaction.toLowerCase().equals("deposit")) {
                 System.out.println("Please enter an amount to deposit:");
-                deposit = scan.nextInt();
+                deposit = scan.next();
+                double dep = Double.parseDouble(deposit);
+                
 
-                if (deposit > 0) 
+                if (dep > 0) 
 
                 {
                     System.out.println( deposit + " deposited");
                 } 
 
-                else if (deposit < 0)
+                else if (dep < 0)
 
                 {
                     System.out.print("Enter a valid number");
@@ -49,15 +54,17 @@ while(true) {
             // WITHDRAW
                 if (transaction.toLowerCase().equals("withdraw")) {
                 System.out.println("Please enter an amount to withdraw:");
-                withdraw = scan.nextInt();
+                withdraw = scan.next();
+                double wit = Double.parseDouble(withdraw);
 
-                if (withdraw > 0) 
+
+                if (wit > 0) 
 
                 {
                     System.out.println( withdraw + " withdrawn");
                 } 
 
-                else if (withdraw < 0)
+                else if (wit < 0)
 
                 {
                     System.out.print("Enter a valid number");
@@ -67,20 +74,7 @@ while(true) {
             // BALANCE
                 if (transaction.toLowerCase().equals("balance")) {
                 System.out.println("Balance is: ");
-                
 
-                // if (withdraw > 0) 
-
-                // {
-                //     System.out.println( withdraw + " withdrawn");
-                // } 
-
-                // else if (withdraw < 0)
-
-                // {
-                //     System.out.print("Enter a valid number");
-                //     bank();
-                // }
             }
 
         // EXIT
