@@ -29,8 +29,10 @@ while(true) {
         // based on the transaction that the user inputs
         System.out.print("Please enter in a command (deposit, withdraw, balance, exit): ");
         
+       // setting the source as the path to the log.html file so we can access it
         String source = "/Users/Christopher/Desktop/jaroop_assessment/log.html";
-
+      
+      // storing the source, and table/td elements in variables to be used later
         Document doc = Jsoup.parse(new File(source), "utf-8");
         Elements tables = doc.select("table");
         Elements trans = doc.select("td");
@@ -44,7 +46,7 @@ while(true) {
         String deposit;
         String withdraw;
         
-
+        // Scanner/ the scan variable is taking the user's input from the keyboard to read it
         Scanner scan = new Scanner(System.in);
        
         // setting transaction to equal what the user inputs
